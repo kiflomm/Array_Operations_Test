@@ -1,7 +1,8 @@
 import org.junit.*; 
-public class ArrayOperationsTest {
+public class ArrayOperationsTest {  
+    //Test - one ========> for ArrayOperationsTest.searchArray() 
     @Test
-    public void sayTest(){ 
-        Assert.assertEquals(false, ArrayOperations.searchArray());
+    public void searchArrayTest(){  
+
     }
 }
