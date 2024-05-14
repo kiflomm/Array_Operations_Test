@@ -3,6 +3,7 @@ public class ArrayOperations {
 
     public static void main(String[] args) {
         int choice,searchKey=0;
+        boolean ascending= true;
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n \tEnter an Array of integers to perform some operations on it\n start by entering its size: --> ");
         int size = scanner.nextInt();
@@ -36,7 +37,7 @@ public class ArrayOperations {
                     searchArray(numbers,searchKey);
                     break;
                 case 2:
-                    sortArray(numbers);
+                    sortArray(numbers,ascending);
                     break;
                 case 3:
                     reverseArray(numbers);
@@ -65,12 +66,40 @@ public class ArrayOperations {
         boolean found = false; 
         return found;
     }
+        
+    public static int[] sortArray(int[] numbers, boolean ascending) {
+            // Clone the original array to avoid modifying it in-place
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter 1 for ascending  and 2 for descending order");
+            int order = scanner.nextInt();
+            if(order==2){
+                ascending=false;
+            }
 
-    public static double[] sortArray(int[] numbers) {
-        double [] sorted = {};
-
-        return sorted;
-    }
+            int[] sortedarray =  numbers.clone();
+          
+            // Use Arrays.sort() for efficient sorting
+            Arrays.sort(sortedarray);
+          
+            // Reverse the array for descending order if needed
+            if (!ascending) {
+              int left = 0;
+              int right = sortedarray.length - 1;
+              while (left < right) {
+                int temp = sortedarray[left];
+                sortedarray[left] = sortedarray[right];
+                sortedarray[right] = temp;
+                left++;
+                right--;
+              }
+            }
+            for(int i=0; i<numbers.length;i++){
+                System.out.print(sortedarray[i]+ " "); 
+                }
+                System.out.println("\n \n");
+            return sortedarray ;
+          }
+    
 
 
     public static double[] reverseArray(int[] numbers) {
@@ -97,3 +126,4 @@ public class ArrayOperations {
         return sumOfPrimes;
     } 
 }
+
