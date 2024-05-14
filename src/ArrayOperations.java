@@ -29,9 +29,19 @@ public class ArrayOperations {
             }
             switch (choice) {
                 case 1:
-                    //searchArray
-                    searchArray(numbers,searchKey);
-                    break;
+                        {
+                        int []indices;
+                        indices=searchArray(numbers,searchKey);
+                            
+                        System.out.print("\n" + searchKey + " is found at index: ");
+                        for
+                         (int i : indices)
+                          {
+                            System.out.print(i +"," );
+                        }
+                        System.out.println("\n");
+                            
+                        }
                 case 2:
                     sortArray(numbers);
                     break;
@@ -64,9 +74,41 @@ public class ArrayOperations {
         scanner.close();
     }
 
-    public static boolean searchArray(int[] numbers,int searchKey) {
-        boolean found = false; 
-        return found;
+    public static int[]  searchArray(int[] numbers,int searchKey) {
+        
+        int count = 0;
+        int i;
+
+        // Count the occurrences of the target number
+        for
+         ( i = 0; i < numbers.length; i++) 
+        {
+            if
+             (numbers[i] == searchKey)
+              {
+                count++;
+            }
+        }
+
+        // Create an array to store the indices of the target number
+        int[] indices;
+        indices = new int[count];
+        int index;
+        index = 0;
+         int j;
+        // Store the indices of the target number
+        for
+         (j = 0; j < numbers.length; j++)
+          {
+            if (numbers[j] == searchKey) {
+                indices[index] = j;
+                index++;
+                
+            }
+        }
+
+        return indices;
+
     }
 
     public static double[] sortArray(int[] numbers) {
