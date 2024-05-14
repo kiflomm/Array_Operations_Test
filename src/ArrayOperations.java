@@ -10,9 +10,7 @@ public class ArrayOperations {
         System.out.println("Enter the integers (separated by spaces): ");
         for (int i = 0; i < size; i++) {
             numbers[i] = scanner.nextInt();
-        }  
-        System.out.print("\033[H\033[2J");              // clears the screen after prompting the array successfuly
-        System.out.flush();
+        }
             System.out.println("OKAY NOW you can do the following operations on the array.\n\tplease choose one option");
         do {
             
@@ -24,10 +22,11 @@ public class ArrayOperations {
             System.out.println("6. Find sum of prime numbers");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: "); 
-            choice = scanner.nextInt();  
-            
-            System.out.print("\033[H\033[2J");              // clears the screen after displaying the menu
-            System.out.flush();
+            choice = scanner.nextInt(); 
+            if(choice == 1){
+                System.out.print("Enter the number to search : ");
+                searchKey = scanner.nextInt();
+            }
             switch (choice) {
                 case 1:
                         {
@@ -59,7 +58,7 @@ public class ArrayOperations {
                     countEvenNumbers(numbers);
                     break;
                 case 6:
-                    sumOfPrimes(numbers);
+                System.out.println("\n\n\n\nThe sum of the prime numbers in the array you entered is : "+sumOfPrimes(numbers)+"\n\n\n\n\n");
                     break;
                 case 0:
                     System.out.println("Exiting program...");
@@ -132,7 +131,26 @@ public class ArrayOperations {
 
     public static int sumOfPrimes(int[] numbers) {
         int sumOfPrimes = 0;
-        
+      
+        for (int num : numbers) {
+          if (isPrime(num)) {
+            sumOfPrimes += num;
+          }
+        }
+      
         return sumOfPrimes;
-    } 
+      }
+      
+      // Helper method to check if a number is prime (usefull in the sumOfPrimes())
+      private static boolean isPrime(int num) {
+        if (num <= 1) {
+          return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
 }
