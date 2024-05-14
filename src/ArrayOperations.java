@@ -89,8 +89,20 @@ public class ArrayOperations {
     }
 
     public static double calculateAverage(int[] numbers) {
-        double average = 0;
-
+        int sum = 0;
+        double average = 0.0;
+        
+        for (int num : numbers) {
+            sum += num;
+        }
+        
+        if (numbers.length > 0) {
+            average = (double) sum / numbers.length;
+            System.out.println("The average of the array elements is: " + average+"\n\n\n");
+        } else {
+            System.out.println("The array is empty. Cannot calculate average.\n\n\n");
+        }
+        
         return average;
     }
 
