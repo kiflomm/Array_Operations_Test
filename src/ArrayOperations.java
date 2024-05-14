@@ -71,12 +71,18 @@ public class ArrayOperations {
 
         return sorted;
     }
-
-
+    
     public static double[] reverseArray(int[] numbers) {
-        double [] reversed = {};
-
-        return reversed;
+            int[] reversed = new int[numbers.length];
+            int j = numbers.length - 1;
+        
+            for (int i = 0; i < numbers.length; i++) {
+                reversed[j] = numbers[i];
+                j--;
+            }
+        
+            return reversed;
+        
     }
 
     public static double calculateAverage(int[] numbers) {
