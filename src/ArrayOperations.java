@@ -32,7 +32,15 @@ public class ArrayOperations {
                         {
                         int []indices;
                         indices=searchArray(numbers,searchKey);
-                            
+                       //if the targeted number is not in the array
+                        if
+                        (indices.length == 0)
+                         {
+                           System.out.println("\nThis number is not found.\n\n");
+                          
+                        } 
+                       else
+                        {
                         System.out.print("\n" + searchKey + " is found at index: ");
                         for
                          (int i : indices)
@@ -40,7 +48,7 @@ public class ArrayOperations {
                             System.out.print(i +"," );
                         }
                         System.out.println("\n");
-                            
+                    }
                         }
                 case 2:
                     sortArray(numbers);
