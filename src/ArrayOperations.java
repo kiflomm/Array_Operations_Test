@@ -34,7 +34,7 @@ public class ArrayOperations {
                     searchArray(numbers,searchKey);
                     break;
                 case 2:
-                    sortArray(numbers,ascending);
+                    sortArray(numbers, ascending);
                     break;
                 case 3:
                 System.out.print("\n\nThe reversed array list is: ");
@@ -69,7 +69,7 @@ public class ArrayOperations {
         boolean found = false; 
         return found;
     }
-        
+    
     public static int[] sortArray(int[] numbers,boolean ascending) {
        
         // Clone the original array to avoid modifying it in-place
@@ -99,10 +99,9 @@ public class ArrayOperations {
        System.out.print(sortedarray[i] + " ");
        }
        System.out.println("\n \n \n");
-       return sortedarray ;
+       return sortedarray;
 
 }
-
 
 
     public static int[] reverseArray(int[] numbers) {
