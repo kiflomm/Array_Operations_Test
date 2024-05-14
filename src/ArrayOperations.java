@@ -29,6 +29,7 @@ public class ArrayOperations {
             }
             switch (choice) {
                 case 1:
+                    //searchArray
                     searchArray(numbers,searchKey);
                     break;
                 case 2:
