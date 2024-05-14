@@ -39,7 +39,13 @@ public class ArrayOperations {
                     sortArray(numbers);
                     break;
                 case 3:
-                    reverseArray(numbers);
+                System.out.print("\n\nThe reversed array list is: ");
+                for(int i=0; i<reverseArray(numbers).length; i++){
+                    System.out.print(reverseArray(numbers)[i]+" ");
+                };
+                System.out.println();
+                System.out.println();
+                System.out.println();
                     break;
                 case 4:
                     calculateAverage(numbers);
@@ -71,8 +77,8 @@ public class ArrayOperations {
 
         return sorted;
     }
-    
-    public static double[] reverseArray(int[] numbers) {
+
+    public static int[] reverseArray(int[] numbers) {
             int[] reversed = new int[numbers.length];
             int j = numbers.length - 1;
         
