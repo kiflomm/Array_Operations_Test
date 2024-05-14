@@ -137,8 +137,7 @@ public class ArrayOperations {
             return reversed;
         
     }
-
-   public static double calculateAverage(int[] numbers) {
+    public static double calculateAverage(int[] numbers) { 
         int sum = 0;
         double average = 0.0;
         
