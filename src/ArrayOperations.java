@@ -11,9 +11,7 @@ public class ArrayOperations {
         System.out.println("Enter the integers (separated by spaces): ");
         for (int i = 0; i < size; i++) {
             numbers[i] = scanner.nextInt();
-        }  
-        System.out.print("\033[H\033[2J");              // clears the screen after prompting the array successfuly
-        System.out.flush();
+        }
             System.out.println("OKAY NOW you can do the following operations on the array.\n\tplease choose one option");
         do {
             
@@ -30,17 +28,22 @@ public class ArrayOperations {
                 System.out.print("Enter the number to search : ");
                 searchKey = scanner.nextInt();
             }
-            System.out.print("\033[H\033[2J");              // clears the screen after displaying the menu
-            System.out.flush();
             switch (choice) {
                 case 1:
+                    //searchArray
                     searchArray(numbers,searchKey);
                     break;
                 case 2:
                     sortArray(numbers,ascending);
                     break;
                 case 3:
-                    reverseArray(numbers);
+                System.out.print("\n\nThe reversed array list is: ");
+                for(int i=0; i<reverseArray(numbers).length; i++){
+                    System.out.print(reverseArray(numbers)[i]+" ");
+                };
+                System.out.println();
+                System.out.println();
+                System.out.println();
                     break;
                 case 4:
                     calculateAverage(numbers);
@@ -49,7 +52,7 @@ public class ArrayOperations {
                     countEvenNumbers(numbers);
                     break;
                 case 6:
-                    sumOfPrimes(numbers);
+                System.out.println("\n\n\n\nThe sum of the prime numbers in the array you entered is : "+sumOfPrimes(numbers)+"\n\n\n\n\n");
                     break;
                 case 0:
                     System.out.println("Exiting program...");
@@ -67,45 +70,52 @@ public class ArrayOperations {
         return found;
     }
         
-    public static int[] sortArray(int[] numbers, boolean ascending) {
-            // Clone the original array to avoid modifying it in-place
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter 1 for ascending  and 2 for descending order");
-            int order = scanner.nextInt();
-            if(order==2){
-                ascending=false;
-            }
+    public static int[] sortArray(int[] numbers,boolean ascending) {
+       
+        // Clone the original array to avoid modifying it in-place
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 1 for ascending and 2 for descending order");
+        int order = scanner.nextInt();
+        if(order==2){
+            ascending=false;}
+    
+        int [] sortedarray = numbers.clone();
+     
+        // Use Arrays.sort() for efficient sorting
+        Arrays.sort(sortedarray);
 
-            int[] sortedarray =  numbers.clone();
-          
-            // Use Arrays.sort() for efficient sorting
-            Arrays.sort(sortedarray);
-          
-            // Reverse the array for descending order if needed
-            if (!ascending) {
-              int left = 0;
-              int right = sortedarray.length - 1;
-              while (left < right) {
+        // Reverse the array for descending order if needed
+        if (!ascending) {
+             int left = 0;
+             int right = sortedarray.length - 1;
+            while (left < right) {
                 int temp = sortedarray[left];
                 sortedarray[left] = sortedarray[right];
                 sortedarray[right] = temp;
                 left++;
-                right--;
-              }
+                right--;}       
+           }
+       for (int i=0; i<sortedarray.length; i++){
+       System.out.print(sortedarray[i] + " ");
+       }
+       System.out.println("\n \n \n");
+       return sortedarray ;
+
+}
+
+
+
+    public static int[] reverseArray(int[] numbers) {
+            int[] reversed = new int[numbers.length];
+            int j = numbers.length - 1;
+        
+            for (int i = 0; i < numbers.length; i++) {
+                reversed[j] = numbers[i];
+                j--;
             }
-            for(int i=0; i<numbers.length;i++){
-                System.out.print(sortedarray[i]+ " "); 
-                }
-                System.out.println("\n \n");
-            return sortedarray ;
-          }
-    
-
-
-    public static double[] reverseArray(int[] numbers) {
-        double [] reversed = {};
-
-        return reversed;
+        
+            return reversed;
+        
     }
 
     public static double calculateAverage(int[] numbers) {
@@ -122,8 +132,27 @@ public class ArrayOperations {
 
     public static int sumOfPrimes(int[] numbers) {
         int sumOfPrimes = 0;
-        
+      
+        for (int num : numbers) {
+          if (isPrime(num)) {
+            sumOfPrimes += num;
+          }
+        }
+      
         return sumOfPrimes;
-    } 
+      }
+      
+      // Helper method to check if a number is prime (usefull in the sumOfPrimes())
+      private static boolean isPrime(int num) {
+        if (num <= 1) {
+          return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
 }
 
