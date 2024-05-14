@@ -2,7 +2,7 @@ import java.util.*;
 public class ArrayOperations {
 
     public static void main(String[] args) {
-        int choice;
+        int choice,searchKey=0;
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n \tEnter an Array of integers to perform some operations on it\n start by entering its size: --> ");
         int size = scanner.nextInt();
@@ -22,29 +22,16 @@ public class ArrayOperations {
             System.out.println("6. Find sum of prime numbers");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: "); 
-            choice = scanner.nextInt(); 
+            choice = scanner.nextInt();  
             if(choice == 1){
                 System.out.print("Enter the number to search : ");
                 searchKey = scanner.nextInt();
             }
             switch (choice) {
                 case 1:
-                        {
-                        int searchKey;
-                        System.out.print("Enter the number to search : ");
-
-                        searchKey = scanner.nextInt();
-                        int []indices;
-                        indices=searchArray(numbers,searchKey);
-                         
-                            System.out.print("\n" + searchKey + " is found at index: ");
-                            for (int i : indices) {
-                                System.out.print(i + ", ");
-                            }
-                            System.out.println("\n"); 
-                
-                      break;
-                        }
+                    //searchArray
+                    searchArray(numbers,searchKey);
+                    break;
                 case 2:
                     sortArray(numbers);
                     break;
@@ -71,37 +58,9 @@ public class ArrayOperations {
         scanner.close();
     }
 
-    
-    public static int[] searchArray(int[] numbers,int searchKey) {
-       
-        int count = 0;
-        int i;
-
-        // Count the occurrences of the target number
-        for
-         ( i = 0; i < numbers.length; i++) 
-        {
-            if (numbers[i] == searchKey) {
-                count++;
-            }
-        }
-
-        // Create an array to store the indices of the target number
-        int[] indices = new int[count];
-        int index = 0;
-         int j;
-        // Store the indices of the target number
-        for
-         (j = 0; j < numbers.length; j++)
-          {
-            if (numbers[j] == searchKey) {
-                indices[index] = j;
-                index++;
-            }
-        }
-
-        return indices;
-
+    public static boolean searchArray(int[] numbers,int searchKey) {
+        boolean found = false; 
+        return found;
     }
 
     public static double[] sortArray(int[] numbers) {
