@@ -30,9 +30,27 @@ public class ArrayOperations {
             }
             switch (choice) {
                 case 1:
-                    //searchArray
-                    searchArray(numbers,searchKey);
-                    break;
+                        {
+                        int []indices;
+                        indices=searchArray(numbers,searchKey);
+                       //if the targeted number is not in the array
+                        if
+                        (indices.length == 0)
+                         {
+                           System.out.println("\nThis number is not found.\n\n");
+                          
+                        } 
+                       else
+                        {
+                        System.out.print("\n" + searchKey + " is found at index: ");
+                        for
+                         (int i : indices)
+                          {
+                            System.out.print(i +"," );
+                        }
+                        System.out.println("\n");
+                    }
+                        }
                 case 2:
                     sortArray(numbers, ascending);
                     break;
@@ -65,9 +83,41 @@ public class ArrayOperations {
         scanner.close();
     }
 
-    public static boolean searchArray(int[] numbers,int searchKey) {
-        boolean found = false; 
-        return found;
+    public static int[]  searchArray(int[] numbers,int searchKey) {
+        
+        int count = 0;
+        int i;
+
+        // Count the occurrences of the target number
+        for
+         ( i = 0; i < numbers.length; i++) 
+        {
+            if
+             (numbers[i] == searchKey)
+              {
+                count++;
+            }
+        }
+
+        // Create an array to store the indices of the target number
+        int[] indices;
+        indices = new int[count];
+        int index;
+        index = 0;
+         int j;
+        // Store the indices of the target number
+        for
+         (j = 0; j < numbers.length; j++)
+          {
+            if (numbers[j] == searchKey) {
+                indices[index] = j;
+                index++;
+                
+            }
+        }
+
+        return indices;
+
     }
     
     public static int[] sortArray(int[] numbers,boolean ascending) {
@@ -116,10 +166,21 @@ public class ArrayOperations {
             return reversed;
         
     }
-
-    public static double calculateAverage(int[] numbers) {
-        double average = 0;
-
+    public static double calculateAverage(int[] numbers) { 
+        int sum = 0;
+        double average = 0.0;
+        
+        for (int num : numbers) {
+            sum += num;
+        }
+        
+        if (numbers.length > 0) {
+            average = (double) sum / numbers.length;
+            System.out.println("The average of the array elements is: " + average+"\n\n\n");
+        } else {
+            System.out.println("The array is empty. Cannot calculate average.\n\n\n");
+        }
+        
         return average;
     }
 
