@@ -15,7 +15,19 @@ public class ArrayOperationsTest {
     boolean ascending = true;
     int[] expected = {1, 2, 3, 5, 8};
 
-  int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
-  assertArrayEquals(expected, actual);
+    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+    assertArrayEquals(expected, actual);}
+    //Test for descending sort
+    
+    @Test
+    public void testValidDescendingSort() {
+    int[] numbers = {5, 2, 8, 1, 3};
+    boolean ascending = false; // Sort in descending order
+    int[] expected = {8, 5, 3, 2, 1};
+
+    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+
+    assertArrayEquals(expected, actual);
 }
 }
+
