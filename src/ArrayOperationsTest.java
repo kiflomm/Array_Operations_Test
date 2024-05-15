@@ -13,7 +13,17 @@ public class ArrayOperationsTest {
             int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
         
             Assert.assertArrayEquals(expectedIndices, actualIndices);
-        
+                
+               //Test when the search key is found multiple times in the array
+             
+               int[] numbers1 = {1, 2, 3, 4, 3, 5, 3};
+                int searchKey1 = 3;
+                int[] expectedIndices1 = {2, 4, 6};
+
+                int[] actualIndices1 = ArrayOperations.searchArray(numbers1, searchKey1);
+
+                Assert.assertArrayEquals(expectedIndices1, actualIndices1);
+                    
     }
     //Test - two ========> for ArrayOperationTest.sortArray()
 
