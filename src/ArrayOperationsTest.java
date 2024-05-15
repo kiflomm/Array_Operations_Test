@@ -1,3 +1,4 @@
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -35,5 +36,12 @@ public class ArrayOperationsTest {
         double actual = ArrayOperations.calculateAverage(numbers);
         Assert.assertTrue(actual > 0.0);
     }
+        @Test
+    public void testCalculateAverageWithNegativeNumbersUsingAssertFalse() {
+        int[] numbers = {-5, -10, -15, -20};
+        double actual = ArrayOperations.calculateAverage(numbers);
+        Assert.assertFalse(actual > 0.0);
+    }
+
 
 }
