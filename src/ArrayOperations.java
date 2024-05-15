@@ -66,8 +66,14 @@ public class ArrayOperations {
                     calculateAverage(numbers);
                     break;
                 case 5:
-                    countEvenNumbers(numbers);
+                {
+                   int numberofevens;
+                   numberofevens= countEvenNumbers(numbers);
+                   System.out.println();
+                   System.out.println("number of evens in your array"+":"+numberofevens);
+                   System.out.println();
                     break;
+                }
                 case 6:
                 System.out.println("\n\n\n\nThe sum of the prime numbers in the array you entered is : "+sumOfPrimes(numbers)+"\n\n\n\n\n");
                     break;
@@ -157,7 +163,11 @@ public class ArrayOperations {
 
     public static int countEvenNumbers(int[] numbers) {
         int count = 0;
-
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
         return count;
     } 
 
