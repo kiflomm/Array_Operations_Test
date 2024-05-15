@@ -11,5 +11,13 @@ public class ArrayOperationsTest {
             // Assert the calculated average is equal to the expected average
             Assert.assertEquals(expectedAverage, actualAverage, 0.001);
     }
-    
+
+    @Test
+   public void testCalculateAverageWithNegativeNumbers() {
+        int[] numbers = {-5, -10, -15, -20};
+        double expected = -12.5;
+        double actual = ArrayOperations.calculateAverage(numbers);
+        Assert.assertEquals(expected, actual, 0.001);
+    }
+
 }
