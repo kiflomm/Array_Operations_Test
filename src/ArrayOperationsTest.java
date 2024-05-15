@@ -28,6 +28,21 @@ public class ArrayOperationsTest {
     int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
 
     assertArrayEquals(expected, actual);
+}   
+    //Test for empty array 
+    @Test
+    public void testEmptyArraySort() {
+    int[] numbers = {};
+    boolean ascending = true; // Doesn't matter for empty array
+    int[] expected = {};
+
+    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+
+    assertArrayEquals(expected, actual);
 }
+
+
+
+
 }
 
