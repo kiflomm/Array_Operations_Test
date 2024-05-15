@@ -1,11 +1,6 @@
 import org.junit.*; 
-public class ArrayOperationsTest {  
-    //Test - one ========> for ArrayOperationsTest.searchArray() 
-    @Test
-    public void searchArrayTest(){  
 
-    }
-
+public class ArrayOperationsTest {
     @Test
         public void testCalculateAverage() {
             int[] numbers = {1, 2, 3, 4, 5};
@@ -15,6 +10,6 @@ public class ArrayOperationsTest {
             
             // Assert the calculated average is equal to the expected average
             Assert.assertEquals(expectedAverage, actualAverage, 0.001);
-
     }
+    
 }
