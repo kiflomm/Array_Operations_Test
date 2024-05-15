@@ -23,7 +23,17 @@ public class ArrayOperationsTest {
                 int[] actualIndices1 = ArrayOperations.searchArray(numbers1, searchKey1);
 
                 Assert.assertArrayEquals(expectedIndices1, actualIndices1);
-                    
+         //Test with a large array          
+                
+     int[] numbers2 = new int[1000000];
+    int searchKey2 = 7;
+    // Set a specific index to 7 to ensure it is found
+    numbers2[123456] = 7;
+    int[] expectedIndices2 = {123456};
+
+    int[] actualIndices2 = ArrayOperations.searchArray(numbers2, searchKey2);
+
+    Assert.assertArrayEquals(expectedIndices2, actualIndices2);
     }
     //Test - two ========> for ArrayOperationTest.sortArray()
 
