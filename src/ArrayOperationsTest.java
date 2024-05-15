@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertNotEquals;
+
 import org.junit.*; 
 
 public class ArrayOperationsTest {
@@ -18,6 +20,12 @@ public class ArrayOperationsTest {
         double expected = -12.5;
         double actual = ArrayOperations.calculateAverage(numbers);
         Assert.assertEquals(expected, actual, 0.001);
+    }
+    @Test
+   public void testCalculateAverageWithNonEmptyArrayUsingAssertNotEquals() {
+        int[] numbers = {5, 10, 15, 20};
+        double actual = ArrayOperations.calculateAverage(numbers);
+       Assert.assertNotEquals(0.0, actual);
     }
 
 }
