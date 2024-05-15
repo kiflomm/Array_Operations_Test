@@ -3,6 +3,7 @@ public class ArrayOperations {
 
     public static void main(String[] args) {
         int choice,searchKey=0;
+        boolean ascending= true;
         Scanner scanner = new Scanner(System.in);
         System.out.print("\n \tEnter an Array of integers to perform some operations on it\n start by entering its size: --> ");
         int size = scanner.nextInt();
@@ -29,11 +30,29 @@ public class ArrayOperations {
             }
             switch (choice) {
                 case 1:
-                    //searchArray
-                    searchArray(numbers,searchKey);
-                    break;
+                        {
+                        int []indices;
+                        indices=searchArray(numbers,searchKey);
+                       //if the targeted number is not in the array
+                        if
+                        (indices.length == 0)
+                         {
+                           System.out.println("\nThis number is not found.\n\n");
+                          
+                        } 
+                       else
+                        {
+                        System.out.print("\n" + searchKey + " is found at index: ");
+                        for
+                         (int i : indices)
+                          {
+                            System.out.print(i +"," );
+                        }
+                        System.out.println("\n");
+                    }
+                        }
                 case 2:
-                    sortArray(numbers);
+                    sortArray(numbers, ascending);
                     break;
                 case 3:
                 System.out.print("\n\nThe reversed array list is: ");
@@ -64,16 +83,76 @@ public class ArrayOperations {
         scanner.close();
     }
 
-    public static boolean searchArray(int[] numbers,int searchKey) {
-        boolean found = false; 
-        return found;
-    }
+    public static int[]  searchArray(int[] numbers,int searchKey) {
+        
+        int count = 0;
+        int i;
 
-    public static double[] sortArray(int[] numbers) {
-        double [] sorted = {};
+        // Count the occurrences of the target number
+        for
+         ( i = 0; i < numbers.length; i++) 
+        {
+            if
+             (numbers[i] == searchKey)
+              {
+                count++;
+            }
+        }
 
-        return sorted;
+        // Create an array to store the indices of the target number
+        int[] indices;
+        indices = new int[count];
+        int index;
+        index = 0;
+         int j;
+        // Store the indices of the target number
+        for
+         (j = 0; j < numbers.length; j++)
+          {
+            if (numbers[j] == searchKey) {
+                indices[index] = j;
+                index++;
+                
+            }
+        }
+
+        return indices;
+
     }
+    
+    public static int[] sortArray(int[] numbers,boolean ascending) {
+       
+        // Clone the original array to avoid modifying it in-place
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 1 for ascending and 2 for descending order");
+        int order = scanner.nextInt();
+        if(order==2){
+            ascending=false;}
+    
+        int [] sortedarray = numbers.clone();
+     
+        // Use Arrays.sort() for efficient sorting
+        Arrays.sort(sortedarray);
+
+        // Reverse the array for descending order if needed
+        if (!ascending) {
+             int left = 0;
+             int right = sortedarray.length - 1;
+            while (left < right) {
+                int temp = sortedarray[left];
+                sortedarray[left] = sortedarray[right];
+                sortedarray[right] = temp;
+                left++;
+                right--;}       
+           }
+       for (int i=0; i<sortedarray.length; i++){
+       System.out.print(sortedarray[i] + " ");
+       }
+       System.out.println("\n \n \n");
+       return sortedarray;
+
+}
+
 
     public static int[] reverseArray(int[] numbers) {
             int[] reversed = new int[numbers.length];
@@ -87,10 +166,21 @@ public class ArrayOperations {
             return reversed;
         
     }
-
-    public static double calculateAverage(int[] numbers) {
-        double average = 0;
-
+    public static double calculateAverage(int[] numbers) { 
+        int sum = 0;
+        double average = 0.0;
+        
+        for (int num : numbers) {
+            sum += num;
+        }
+        
+        if (numbers.length > 0) {
+            average = (double) sum / numbers.length;
+            System.out.println("The average of the array elements is: " + average+"\n\n\n");
+        } else {
+            System.out.println("The array is empty. Cannot calculate average.\n\n\n");
+        }
+        
         return average;
     }
 
@@ -125,3 +215,4 @@ public class ArrayOperations {
         return true;
       }
 }
+
