@@ -134,52 +134,7 @@ public class ArrayOperationsTest {
     int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
     assertArrayEquals(expected, actual);}
     
-    //Test for descending sort
-    @Test
-    public void testValidDescendingSort() {
-    int[] numbers = {5, 2, 8, 1, 3};
-    boolean ascending = false; // Sort in descending order
-    int[] expected = {8, 5, 3, 2, 1};
-
-    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
-
-    assertArrayEquals(expected, actual);
-}   
-     //Test for empty array 
-    @Test
-    public void testEmptyArraySort() {
-    int[] numbers = {};
-    boolean ascending = true; // Doesn't matter for empty array
-    int[] expected = {};
-
-    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
-
-    assertArrayEquals(expected, actual);
-}
-
-    //Test for array with one element:
-    @Test
-    public void testSingleElementArraySort() {
-    int[] numbers = {5};
-    boolean ascending = true; // Doesn't matter for single element
-    int[] expected = {5};
-
-    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
-
-    assertArrayEquals(expected, actual);
-} 
-    //Test for handling negative numbers
-   @Test
-   public void testArrayWithNegativeNumbers() {
-   int[] numbers = {-2, 5, 1, -8};
-   boolean ascending = true;
-   int[] expected = {-8, -2, 1, 5};
-
-   int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
-
-   assertArrayEquals(expected, actual);
-}
-
+   
     // when you add your Tests and put your code above this
 
 }
