@@ -36,6 +36,17 @@ public void testSearchArray_LargeArray() {
 
     Assert.assertArrayEquals(expectedIndices, actualIndices);
 }
+//Test with an empty array
+@Test
+public void testSearchArray_EmptyArray() {
+    int[] numbers = {};
+    int searchKey = 5;
+    int[] expectedIndices = {};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
     // Tests for the ArrayOperations.reverseArray() starts here
     // test for empty arrays
     @Test
