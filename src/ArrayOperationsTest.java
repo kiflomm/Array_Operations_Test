@@ -240,10 +240,22 @@ public void testSearchArray_EmptyArray() {
         }
     }
     
-    
-    
-        
-    
+    @Test
+    public void testArrayWithLargeNumbers() {
+        int[] largeArray = {1000000, 2000000, 3000000, 4000000};
+        assertEquals(4, ArrayOperations.countEvenNumbers(largeArray));
+    }
+    @Test
+public void testArrayWithComplexNumbers() {
+    int[] complexArray = {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000, -1000};
+    assertEquals(7, ArrayOperations.countEvenNumbers(complexArray));
+}  
+@Test
+public void testArrayWithExtremeValues() {
+    int[] extremeArray = {Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 1, -1, 2, -2, Integer.MAX_VALUE - 1, Integer.MIN_VALUE + 1};
+    assertEquals(3, EvenNumbers.countEvenNumbers(extremeArray));
+}
+
     
     
 
