@@ -1,10 +1,6 @@
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.*; 
-
 public class ArrayOperationsTest {
+    
     @Test
         public void testCalculateAverage() {
             int[] numbers = {1, 2, 3, 4, 5};
