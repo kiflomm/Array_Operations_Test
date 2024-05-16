@@ -1,6 +1,52 @@
 import org.junit.*;
 
 public class ArrayOperationsTest {
+//Test when the search key is not found in the array
+    @Test
+public void testSearchArray_KeyNotFound() {
+    int[] numbers = {1, 2, 3, 4, 5};
+    int searchKey = 6;
+    int[] expectedIndices = {};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
+//Test when the search key is found multiple times in the array
+@Test
+public void testSearchArray_KeyFoundMultipleTimes() {
+    int[] numbers = {1, 2, 3, 4, 3, 5, 3};
+    int searchKey = 3;
+    int[] expectedIndices = {2, 4, 6};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
+//Test with a large array
+@Test
+public void testSearchArray_LargeArray() {
+    int[] numbers = new int[1000000];
+    int searchKey = 7;
+    // Set a specific index to 7 to ensure it is found
+    numbers[123456] = 7;
+    int[] expectedIndices = {123456};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
+//Test with an empty array
+@Test
+public void testSearchArray_EmptyArray() {
+    int[] numbers = {};
+    int searchKey = 5;
+    int[] expectedIndices = {};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
     // Tests for the ArrayOperations.reverseArray() starts here
     // test for empty arrays
     @Test
