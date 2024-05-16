@@ -12,6 +12,17 @@ public void testSearchArray_KeyNotFound() {
 
     Assert.assertArrayEquals(expectedIndices, actualIndices);
 }
+//Test when the search key is found multiple times in the array
+@Test
+public void testSearchArray_KeyFoundMultipleTimes() {
+    int[] numbers = {1, 2, 3, 4, 3, 5, 3};
+    int searchKey = 3;
+    int[] expectedIndices = {2, 4, 6};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
     // Tests for the ArrayOperations.reverseArray() starts here
     // test for empty arrays
     @Test
