@@ -33,8 +33,17 @@ public class ArrayOperations {
                         {
                         int []indices;
                         indices=searchArray(numbers,searchKey);
-                       //if the targeted number is not in the array
+                        //for empty array
                         if
+                         (numbers.length==0) 
+                         {
+                            System.out.println();
+                            System.out.print("The array is empty.");
+                            System.out.println();
+                            System.out.println();
+                         }
+                       //if the targeted number is not in the array
+                      else  if
                         (indices.length == 0)
                          {
                            System.out.println("\nThis number is not found.\n\n");
@@ -50,6 +59,7 @@ public class ArrayOperations {
                         }
                         System.out.println("\n");
                     }
+                    break;
                         }
                 case 2:
                     sortArray(numbers, ascending);
@@ -133,6 +143,7 @@ public class ArrayOperations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 1 for ascending and 2 for descending order");
         int order = scanner.nextInt();
+        scanner.close();
         if(order==2){
             ascending=false;}
     
