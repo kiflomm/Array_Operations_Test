@@ -167,6 +167,17 @@ public class ArrayOperationsTest {
     int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
 
     assertArrayEquals(expected, actual);
+} 
+    //Test for handling negative numbers
+   @Test
+   public void testArrayWithNegativeNumbers() {
+   int[] numbers = {-2, 5, 1, -8};
+   boolean ascending = true;
+   int[] expected = {-8, -2, 1, 5};
+
+   int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+
+   assertArrayEquals(expected, actual);
 }
 
     // when you add your Tests and put your code above this
