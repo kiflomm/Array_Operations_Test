@@ -132,6 +132,7 @@ public class ArrayOperations {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 1 for ascending and 2 for descending order");
         int order = scanner.nextInt();
+        scanner.close();
         if(order==2){
             ascending=false;}
     
