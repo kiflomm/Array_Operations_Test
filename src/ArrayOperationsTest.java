@@ -145,6 +145,29 @@ public class ArrayOperationsTest {
 
     assertArrayEquals(expected, actual);
 }   
+     //Test for empty array 
+    @Test
+    public void testEmptyArraySort() {
+    int[] numbers = {};
+    boolean ascending = true; // Doesn't matter for empty array
+    int[] expected = {};
+
+    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+
+    assertArrayEquals(expected, actual);
+}
+
+    //Test for array with one element:
+    @Test
+    public void testSingleElementArraySort() {
+    int[] numbers = {5};
+    boolean ascending = true; // Doesn't matter for single element
+    int[] expected = {5};
+
+    int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+
+    assertArrayEquals(expected, actual);
+}
 
     // when you add your Tests and put your code above this
 
