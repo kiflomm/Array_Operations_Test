@@ -155,7 +155,28 @@ public class ArrayOperationsTest {
  
      assertArrayEquals(expected, actual);
  }
- 
+      //Test for array with one element:
+      @Test
+      public void testSingleElementArraySort() {
+      int[] numbers = {5};
+      boolean ascending = true; // Doesn't matter for single element
+      int[] expected = {5};
+  
+      int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+  
+      assertArrayEquals(expected, actual);
+  } 
+      //Test for handling negative numbers
+     @Test
+     public void testArrayWithNegativeNumbers() {
+     int[] numbers = {-2, 5, 1, -8};
+     boolean ascending = true;
+     int[] expected = {-8, -2, 1, 5};
+  
+     int[] actual = ArrayOperations.sortArray(numbers.clone(), ascending);
+  
+     assertArrayEquals(expected, actual);
+  }
    
  
     
