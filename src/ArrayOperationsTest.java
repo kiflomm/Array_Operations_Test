@@ -1,6 +1,17 @@
 import org.junit.*;
 
 public class ArrayOperationsTest {
+//Test when the search key is not found in the array
+    @Test
+public void testSearchArray_KeyNotFound() {
+    int[] numbers = {1, 2, 3, 4, 5};
+    int searchKey = 6;
+    int[] expectedIndices = {};
+
+    int[] actualIndices = ArrayOperations.searchArray(numbers, searchKey);
+
+    Assert.assertArrayEquals(expectedIndices, actualIndices);
+}
     // Tests for the ArrayOperations.reverseArray() starts here
     // test for empty arrays
     @Test

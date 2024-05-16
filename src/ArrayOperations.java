@@ -50,6 +50,7 @@ public class ArrayOperations {
                         }
                         System.out.println("\n");
                     }
+                    break;
                         }
                 case 2:
                     sortArray(numbers, ascending);
