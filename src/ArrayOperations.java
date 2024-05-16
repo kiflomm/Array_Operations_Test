@@ -68,7 +68,8 @@ public class ArrayOperations {
                     break;
                 case 5:
                 {
-                   int numberofevens;
+                   int
+                    numberofevens;
                    numberofevens= countEvenNumbers(numbers);
                    System.out.println();
                    System.out.println("number of evens in your array"+":"+numberofevens);
