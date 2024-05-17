@@ -221,7 +221,16 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
+    //Test for descending negative numbers
+    @Test
+    public void testSortDescendingPositiveIntegers() {
+        int[] numbers = {3, 1, 4, 2};
+        int[] expected = {4, 3, 2, 1};
 
+        int[] sorted = ArrayOperations.sortArray(numbers, false);
+
+        assertArrayEquals(expected, sorted);
+    }
 
 
 
