@@ -204,7 +204,7 @@ public void testSearchArray_EmptyArray() {
                 numbers[i] = i * 2;
             }
             int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
-            int expected=1000;
+            int expected=10000;
             assertEquals(expected, actualnumberofevens);
         }
         @Test
@@ -239,8 +239,8 @@ public void testSearchArray_EmptyArray() {
             assertEquals(expected, actualnumberofevens);
         }
     }
-    
-    
+
+
     @Test
     public void testArrayWithLargeNumbers() {
         int[]numbers= {1000000, 2000000, 3000000, 4000000};
@@ -260,6 +260,20 @@ public void testArrayWithExtremeValues() {
     int[] numbers= {Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 1, -1, 2, -2, Integer.MAX_VALUE - 1, Integer.MIN_VALUE + 1};
     int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
     int expected=3;
+    assertEquals(expected, actualnumberofevens);
+}
+@Test
+public void testArrayWithLargeComplexNumbersAndDuplicates() {
+    int[] numbers= new int[1000000]; // Array with 1 million elements
+    int count = 0;
+    for (int i = -500000; i <= 499999; i++) {
+        numbers[count++] = i;
+        if (i % 2 == 0) {
+            numbers[count++] = i; // Adding duplicates for even numbers
+        }
+    }
+    int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+    int expected=750000;
     assertEquals(expected, actualnumberofevens);
 }
 
