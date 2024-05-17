@@ -191,6 +191,18 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
+    // Test for singleascending 
+    @Test
+    public void testSortAscendingSingleElement() {
+        int[] numbers = {5};
+        int[] expected = {5};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+    
+
 
 
 
