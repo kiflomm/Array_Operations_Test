@@ -232,6 +232,16 @@ public void testSearchArray_EmptyArray() {
         assertArrayEquals(expected, sorted);
     }
 
+    // Test for ascending mixed numbers
+    @Test
+    public void testSortAscendingMixedIntegers() {
+        int[] numbers = {-1, 5, 0, 3};
+        int[] expected = {-1, 0, 3, 5};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
 
 
 
