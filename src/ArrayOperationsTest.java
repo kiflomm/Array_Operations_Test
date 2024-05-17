@@ -211,6 +211,22 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
+
+    // Test for empty array
+    @Test
+    public void testEmptyArraySort(){
+        int[] numbers = {};
+        boolean ascending= true;
+        int [] expected= {};
+        int [] sorted= ArrayOperations.sortArray(numbers,ascending);
+
+        assertArrayEquals(expected, sorted);
+    }
+
+
+
+    
+
     // Test for ascending negative elements
     @Test
     public void testSortAscendingNegativeIntegers() {
@@ -242,10 +258,8 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
-
-
-
-
+    
+    
     // when you add your Tests and put your code above this
 
 }
