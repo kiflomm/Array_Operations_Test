@@ -1,3 +1,7 @@
+import static org.junit.Assert.assertEquals;
+
+import java.util.Random;
+
 import org.junit.*;
 
 public class ArrayOperationsTest {
@@ -212,6 +216,23 @@ public void testSearchArray_EmptyArray() {
             int expected=0;
             Assert.assertEquals(expected, actualnumberofevens);
         }
+        @Test
+    public void testArrayWithVeryLargeSizeRandomNumbers() {
+        int size = 1000000;
+        int[] numbers = new int[size];
+        Random random = new Random();
+        int evenCount = 0;
+        for (int i = 0; i < size; i++) {
+            int num = random.nextInt();
+            numbers[i] = num;
+            if (num % 2 == 0) {
+                evenCount++;
+            }
+        }
+        int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=evenCount;
+            Assert.assertEquals(expected, actualnumberofevens);
+    }
     
 }
     // when you add your Tests and put your code above this
