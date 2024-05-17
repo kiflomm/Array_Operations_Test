@@ -254,7 +254,48 @@ public void testSearchArray_EmptyArray() {
         assertArrayEquals(expected, sorted);
     }
     // Test for sortArray(numbers, ascending ) ends here
+   
+    //Test - for ArrayOperationTest.countEvenNumbers() ========>start here
+        @Test
+        public void testCountEvenNumbersWithEmptyArray() {
+            int[] numbers = {};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            Assert.assertEquals(expected, actualnumberofevens);
+        }
     
+        @Test
+        public void testCountEvenNumbersWithNoEvenNumbers() {
+            int[] numbers = {1, 3, 5, 7, 9};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            Assert.assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithAllEvenNumbers() {
+            int[] numbers = {2, 4, 6, 8, 10};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=5;
+            Assert.assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithMixedNumbers() {
+            int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=5;
+            Assert.assertEquals(expected, actualnumberofevens);
+        }
+     
+        @Test
+        public void testCountEvenNumbersWithSingleElementArray() {
+            int[] numbers = {7};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            Assert.assertEquals(expected, actualnumberofevens);
+        }
+  
     // when you add your Tests and put your code above this
 
 }
