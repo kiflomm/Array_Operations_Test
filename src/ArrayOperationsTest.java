@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertArrayEquals;
+
 import org.junit.*;
 
 public class ArrayOperationsTest {
@@ -169,6 +171,30 @@ public void testSearchArray_EmptyArray() {
         double actual = ArrayOperations.calculateAverage(numbers);
         Assert.assertFalse(actual > 0.0);
     }
+    // Test for sortArray(numbers,ascending) starts here
+     @Test
+    public void testSortAscendingEmptyArray() {
+        int[] numbers = {2,1,8,3};
+        int[] expected = {1,2,3,8};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for descending order
+    @Test
+    public void testSortDescendingEmptyArray() {
+        int[] numbers = {1,2,3,4};
+        int[] expected = {4,3,2,1};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, false);
+
+        assertArrayEquals(expected, sorted);
+    }
+
+
+
+
     // when you add your Tests and put your code above this
 
 }

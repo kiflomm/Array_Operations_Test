@@ -62,7 +62,15 @@ public class ArrayOperations {
                     break;
                         }
                 case 2:
-                    sortArray(numbers, ascending);
+                System.out.println("Enter 1 for ascending and 2 for descending order");
+                int order = scanner.nextInt();
+                if(order==2){
+                     ascending=false;}
+                int [] sortedarray=sortArray(numbers, ascending);
+                for (int i=0; i<numbers.length; i++){
+                    System.out.print(sortedarray[i] + " ");
+                    }
+                    System.out.println("\n \n \n");
                     break;
                 case 3:
                 System.out.print("\n\nThe reversed array list is: ");
@@ -139,13 +147,6 @@ public class ArrayOperations {
     public static int[] sortArray(int[] numbers,boolean ascending) {
        
         // Clone the original array to avoid modifying it in-place
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter 1 for ascending and 2 for descending order");
-        int order = scanner.nextInt();
-        scanner.close();
-        if(order==2){
-            ascending=false;}
-    
         int [] sortedarray = numbers.clone();
      
         // Use Arrays.sort() for efficient sorting
@@ -162,10 +163,7 @@ public class ArrayOperations {
                 left++;
                 right--;}       
            }
-       for (int i=0; i<sortedarray.length; i++){
-       System.out.print(sortedarray[i] + " ");
-       }
-       System.out.println("\n \n \n");
+      
        return sortedarray;
 
 }
