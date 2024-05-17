@@ -191,7 +191,7 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
-    // Test for singleascending 
+    // Test for single element ascending 
     @Test
     public void testSortAscendingSingleElement() {
         int[] numbers = {5};
@@ -201,7 +201,27 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
-    
+    // Test for single element descending 
+    @Test
+    public void testSortDescendingSingleElement() {
+        int[] numbers = {5};
+        int[] expected = {5};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, false);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for ascending negative elements
+    @Test
+    public void testSortAscendingNegativeIntegers() {
+        int[] numbers = {-2, 0, -5, 1};
+        int[] expected = {-5, -2, 0, 1};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+
 
 
 
