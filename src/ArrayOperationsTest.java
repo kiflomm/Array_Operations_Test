@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertEquals;
+
 import org.junit.*;
 
 public class ArrayOperationsTest {
@@ -169,6 +171,133 @@ public void testSearchArray_EmptyArray() {
         double actual = ArrayOperations.calculateAverage(numbers);
         Assert.assertFalse(actual > 0.0);
     }
-    // when you add your Tests and put your code above this
+
+    //Test - for ArrayOperationTest.countEvenNumbers() ========>start here
+    public class EvenNumbersTest {
+   
+        @Test
+        public void testCountEvenNumbersWithEmptyArray() {
+            int[] numbers = {};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithNoEvenNumbers() {
+            int[] numbers = {1, 3, 5, 7, 9};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithAllEvenNumbers() {
+            int[] numbers = {2, 4, 6, 8, 10};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=5;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithMixedNumbers() {
+            int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=5;
+            assertEquals(expected, actualnumberofevens);
+        }
+     
+        @Test
+        public void testCountEvenNumbersWithSingleElementArray() {
+            int[] numbers = {7};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithLargeArray() {
+            int[] numbers = new int[10000];
+            // Fill the array with even numbers
+            for (int i = 0; i < numbers.length; i++) {
+                numbers[i] = i * 2;
+            }
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=10000;
+            assertEquals(expected, actualnumberofevens);
+        }
+        @Test
+        public void testCountEvenNumbersWithNullArray() {
+            int[] numbers = null;
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithNegativeNumbers() {
+            int[] numbers = {-3, -2, -1, 0, 1, 2, 3};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=3;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithZero() {
+            int[] numbers = {0, 0, 0, 0, 0};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=5;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+        @Test
+        public void testCountEvenNumbersWithMaxInteger() {
+            int[] numbers = {Integer.MAX_VALUE, Integer.MAX_VALUE - 1, Integer.MAX_VALUE - 2};
+            int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=0;
+            assertEquals(expected, actualnumberofevens);
+        }
+    
+    @Test
+    public void testArrayWithLargeNumbers() {
+        int[]numbers= {1000000, 2000000, 3000000, 4000000};
+        int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+            int expected=4;
+            assertEquals(expected, actualnumberofevens);
+    }
+    @Test
+public void testArrayWithComplexNumbers() {
+    int[] numbers = {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000, -1000};
+    int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+    int expected=7;
+    assertEquals(expected, actualnumberofevens);
+}  
+@Test
+public void testArrayWithExtremeValues() {
+    int[] numbers= {Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 1, -1, 2, -2, Integer.MAX_VALUE - 1, Integer.MIN_VALUE + 1};
+    int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+    int expected=3;
+    assertEquals(expected, actualnumberofevens);
+}
+@Test
+public void testArrayWithLargeComplexNumbersAndDuplicates() {
+    int[] numbers= new int[1000000]; // Array with 1 million elements
+    int count = 0;
+    for (int i = -500000; i <= 499999; i++) {
+        numbers[count++] = i;
+        if (i % 2 == 0) {
+            numbers[count++] = i; // Adding duplicates for even numbers
+        }
+    }
+    int actualnumberofevens=ArrayOperations.countEvenNumbers(numbers);
+    int expected=750000;
+    assertEquals(expected, actualnumberofevens);
+}
+
+    
+}   
 
 }
+    // when you add your Tests and put your code above this
+
+
