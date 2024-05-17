@@ -222,11 +222,6 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
-
-
-
-    
-
     // Test for ascending negative elements
     @Test
     public void testSortAscendingNegativeIntegers() {
@@ -258,7 +253,7 @@ public void testSearchArray_EmptyArray() {
 
         assertArrayEquals(expected, sorted);
     }
-    
+    // Test for sortArray(numbers, ascending ) ends here
     
     // when you add your Tests and put your code above this
 
