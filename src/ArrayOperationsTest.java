@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertArrayEquals;
+
 import org.junit.*;
 
 public class ArrayOperationsTest {
@@ -169,7 +171,90 @@ public void testSearchArray_EmptyArray() {
         double actual = ArrayOperations.calculateAverage(numbers);
         Assert.assertFalse(actual > 0.0);
     }
+    // Test for sortArray(numbers,ascending) starts here
+     @Test
+    public void testSortAscendingEmptyArray() {
+        int[] numbers = {2,1,8,3};
+        int[] expected = {1,2,3,8};
 
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for descending order
+    @Test
+    public void testSortDescendingEmptyArray() {
+        int[] numbers = {1,2,3,4};
+        int[] expected = {4,3,2,1};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, false);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for single element ascending 
+    @Test
+    public void testSortAscendingSingleElement() {
+        int[] numbers = {5};
+        int[] expected = {5};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for single element descending 
+    @Test
+    public void testSortDescendingSingleElement() {
+        int[] numbers = {5};
+        int[] expected = {5};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, false);
+
+        assertArrayEquals(expected, sorted);
+    }
+
+    // Test for empty array
+    @Test
+    public void testEmptyArraySort(){
+        int[] numbers = {};
+        boolean ascending= true;
+        int [] expected= {};
+        int [] sorted= ArrayOperations.sortArray(numbers,ascending);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for ascending negative elements
+    @Test
+    public void testSortAscendingNegativeIntegers() {
+        int[] numbers = {-2, 0, -5, 1};
+        int[] expected = {-5, -2, 0, 1};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+    //Test for descending negative numbers
+    @Test
+    public void testSortDescendingPositiveIntegers() {
+        int[] numbers = {3, 1, 4, 2};
+        int[] expected = {4, 3, 2, 1};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, false);
+
+        assertArrayEquals(expected, sorted);
+    }
+
+    // Test for ascending mixed numbers
+    @Test
+    public void testSortAscendingMixedIntegers() {
+        int[] numbers = {-1, 5, 0, 3};
+        int[] expected = {-1, 0, 3, 5};
+
+        int[] sorted = ArrayOperations.sortArray(numbers, true);
+
+        assertArrayEquals(expected, sorted);
+    }
+    // Test for sortArray(numbers, ascending ) ends here
+   
     //Test - for ArrayOperationTest.countEvenNumbers() ========>start here
         @Test
         public void testCountEvenNumbersWithEmptyArray() {
@@ -210,6 +295,7 @@ public void testSearchArray_EmptyArray() {
             int expected=0;
             Assert.assertEquals(expected, actualnumberofevens);
         }
+  
     // when you add your Tests and put your code above this
 
 }
