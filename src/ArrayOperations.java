@@ -21,6 +21,7 @@ public class ArrayOperations {
             System.out.println("4. Calculate average of the array elements");
             System.out.println("5. Count even numbers");
             System.out.println("6. Find sum of prime numbers");
+            System.out.println("7.display min and max");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: "); 
             choice = scanner.nextInt();  
@@ -96,6 +97,13 @@ public class ArrayOperations {
                 case 6:
                 System.out.println("\n\n\n\nThe sum of the prime numbers in the array you entered is : "+sumOfPrimes(numbers)+"\n\n\n\n\n");
                     break;
+                    case 7:
+                    {
+                      int[] mima=  displayMinMax(numbers);
+                      System.out.println("minimum number in the array is: " + mima[0]);
+                      System.out.println("The maximum number in the array is: " + mima[1] + "");
+                    break;
+                }
                 case 0:
                     System.out.println("Exiting program...");
                     break;
@@ -233,5 +241,13 @@ public class ArrayOperations {
         }
         return true;
       }
+      public static int[] displayMinMax(int[] numbers) {
+        int min = numbers[0];
+        int max = numbers[0];
+        int [] minmax =new int[2];
+        minmax[0]=min;
+        minmax[1]=max;
+        return minmax;
+    }
 }
 
