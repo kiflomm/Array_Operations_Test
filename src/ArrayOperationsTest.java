@@ -13,6 +13,15 @@ public class ArrayOperationsTest {
          assertEquals(expectedMinMax[0], actualMinMax[0]);
          assertEquals(expectedMinMax[1], actualMinMax[1]);
      }
+     //Test case with an array of positive numbers
+     @Test
+     public void testDisplayMinMax_PositiveNumbers() {
+         int[] numbers = {10, 5, 8, 12, 3};
+         int[] expectedMinMax = {3, 12};
+         int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
+         assertEquals(expectedMinMax[0], actualMinMax[0]);
+         assertEquals(expectedMinMax[1], actualMinMax[1]);
+     }
 //Test when the search key is not found in the array
     @Test
 public void testSearchArray_KeyNotFound() {
