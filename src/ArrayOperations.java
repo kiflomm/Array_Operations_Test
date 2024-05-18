@@ -244,6 +244,14 @@ public class ArrayOperations {
       public static int[] displayMinMax(int[] numbers) {
         int min = numbers[0];
         int max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
         int [] minmax =new int[2];
         minmax[0]=min;
         minmax[1]=max;
