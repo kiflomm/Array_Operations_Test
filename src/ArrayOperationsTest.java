@@ -1,6 +1,4 @@
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-
+import java.util.Arrays;
 import org.junit.*;
 
 public class ArrayOperationsTest {
@@ -10,8 +8,8 @@ public class ArrayOperationsTest {
          int[] numbers = {-7, -3, -10, -2, -5};
          int[] expectedMinMax = {-10, -2};
          int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
-         assertEquals(expectedMinMax[0], actualMinMax[0]);
-         assertEquals(expectedMinMax[1], actualMinMax[1]);
+         Assert.assertEquals(expectedMinMax[0], actualMinMax[0]);
+         Assert.assertEquals(expectedMinMax[1], actualMinMax[1]);
      }
      //Test case with an array of positive numbers
      @Test
@@ -19,8 +17,8 @@ public class ArrayOperationsTest {
          int[] numbers = {10, 5, 8, 12, 3};
          int[] expectedMinMax = {3, 12};
          int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
-         assertEquals(expectedMinMax[0], actualMinMax[0]);
-         assertEquals(expectedMinMax[1], actualMinMax[1]);
+         Assert.assertEquals(expectedMinMax[0], actualMinMax[0]);
+         Assert.assertEquals(expectedMinMax[1], actualMinMax[1]);
      }
      
  // Test case with an array containing duplicate numbers
@@ -29,8 +27,8 @@ public class ArrayOperationsTest {
      int[] numbers = {3, 7, 2, 5, 2, 1, 5};
      int[] expectedMinMax = {1, 7};
      int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
-     assertEquals(expectedMinMax[0], actualMinMax[0]);
-     assertEquals(expectedMinMax[1], actualMinMax[1]);
+     Assert.assertEquals(expectedMinMax[0], actualMinMax[0]);
+     Assert.assertEquals(expectedMinMax[1], actualMinMax[1]);
  }
 //Test when the search key is not found in the array
     @Test
@@ -121,6 +119,19 @@ public void testSearchArray_EmptyArray() {
         int[] expected = { 4, 1, 2, 4, 2 };
         Assert.assertArrayEquals(expected, ArrayOperations.reverseArray(arr));
     }
+     
+    //test using assert method
+    @Test
+    public void testGetReverse(){
+    int[] array1 = {8, 1, 12, 9, 5};
+    int[] array2 = {5, 9, 12, 1, 8, 6, 4};
+    int[] array3 = {5, 9, 12, 1, 8};
+    int[] array4 = {5, 9, 12, 1, 8};
+    int[] array5 = {6, 3, 12, 1, 8};
+    Assert.assertTrue(Arrays.equals(ArrayOperations.reverseArray(array1),array3));
+    Assert.assertFalse(Arrays.equals(ArrayOperations.reverseArray(array1),array2));
+    Assert.assertFalse(Arrays.equals(ArrayOperations.reverseArray(array5),array4)); 
+    }
 
     // Tests for the ArrayOperations.sumOfPrimes() starts here
     @Test
@@ -208,7 +219,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, true);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
     // Test for descending order
     @Test
@@ -218,7 +229,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, false);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
     // Test for single element ascending 
     @Test
@@ -228,7 +239,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, true);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
     // Test for single element descending 
     @Test
@@ -238,7 +249,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, false);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
 
     // Test for empty array
@@ -249,7 +260,7 @@ public void testSearchArray_EmptyArray() {
         int [] expected= {};
         int [] sorted= ArrayOperations.sortArray(numbers,ascending);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
     // Test for ascending negative elements
     @Test
@@ -259,7 +270,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, true);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
     //Test for descending negative numbers
     @Test
@@ -269,7 +280,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, false);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
 
     // Test for ascending mixed numbers
@@ -280,7 +291,7 @@ public void testSearchArray_EmptyArray() {
 
         int[] sorted = ArrayOperations.sortArray(numbers, true);
 
-        assertArrayEquals(expected, sorted);
+        Assert.assertArrayEquals(expected, sorted);
     }
     // Test for sortArray(numbers, ascending ) ends here
    
