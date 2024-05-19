@@ -63,14 +63,15 @@ public class ArrayOperations {
                     break;
                         }
                 case 2:
-                System.out.println("Enter 1 for ascending and 2 for descending order");
+                System.out.println("Enter 2 for descending order otherwise the sorting is ascending");
                 int order = scanner.nextInt();
                 if(order==2){
                      ascending=false;}
                 int [] sortedarray=sortArray(numbers, ascending);
+                System.out.print("The sorted list is : ");
                 for (int i=0; i<numbers.length; i++){
                     System.out.print(sortedarray[i] + " ");
-                    }
+                }
                     System.out.println("\n \n \n");
                     break;
                 case 3:
@@ -258,4 +259,3 @@ public class ArrayOperations {
         return minmax;
     }
 }
-
