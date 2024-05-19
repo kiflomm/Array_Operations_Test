@@ -21,6 +21,7 @@ public class ArrayOperations {
             System.out.println("4. Calculate average of the array elements");
             System.out.println("5. Count even numbers");
             System.out.println("6. Find sum of prime numbers");
+            System.out.println("7.display min and max");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: "); 
             choice = scanner.nextInt();  
@@ -62,14 +63,15 @@ public class ArrayOperations {
                     break;
                         }
                 case 2:
-                System.out.println("Enter 1 for ascending and 2 for descending order");
+                System.out.println("Enter 2 for descending order otherwise the sorting is ascending");
                 int order = scanner.nextInt();
                 if(order==2){
                      ascending=false;}
                 int [] sortedarray=sortArray(numbers, ascending);
+                System.out.print("The sorted list is : ");
                 for (int i=0; i<numbers.length; i++){
                     System.out.print(sortedarray[i] + " ");
-                    }
+                }
                     System.out.println("\n \n \n");
                     break;
                 case 3:
@@ -96,6 +98,13 @@ public class ArrayOperations {
                 case 6:
                 System.out.println("\n\n\n\nThe sum of the prime numbers in the array you entered is : "+sumOfPrimes(numbers)+"\n\n\n\n\n");
                     break;
+                    case 7:
+                    {
+                      int[] mima=  displayMinMax(numbers);
+                      System.out.println("minimum number in the array is: " + mima[0]);
+                      System.out.println("The maximum number in the array is: " + mima[1] + "");
+                    break;
+                }
                 case 0:
                     System.out.println("Exiting program...");
                     break;
@@ -233,5 +242,20 @@ public class ArrayOperations {
         }
         return true;
       }
+      public static int[] displayMinMax(int[] numbers) {
+        int min = numbers[0];
+        int max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        int [] minmax =new int[2];
+        minmax[0]=min;
+        minmax[1]=max;
+        return minmax;
+    }
 }
-

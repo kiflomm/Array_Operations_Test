@@ -1,8 +1,37 @@
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.*;
 
 public class ArrayOperationsTest {
+    // Test case with an array of negative numbers
+     @Test
+     public void testDisplayMinMax_NegativeNumbers() {
+         int[] numbers = {-7, -3, -10, -2, -5};
+         int[] expectedMinMax = {-10, -2};
+         int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
+         assertEquals(expectedMinMax[0], actualMinMax[0]);
+         assertEquals(expectedMinMax[1], actualMinMax[1]);
+     }
+     //Test case with an array of positive numbers
+     @Test
+     public void testDisplayMinMax_PositiveNumbers() {
+         int[] numbers = {10, 5, 8, 12, 3};
+         int[] expectedMinMax = {3, 12};
+         int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
+         assertEquals(expectedMinMax[0], actualMinMax[0]);
+         assertEquals(expectedMinMax[1], actualMinMax[1]);
+     }
+     
+ // Test case with an array containing duplicate numbers
+ @Test
+ public void testDisplayMinMax_DuplicateNumbers() {
+     int[] numbers = {3, 7, 2, 5, 2, 1, 5};
+     int[] expectedMinMax = {1, 7};
+     int[] actualMinMax = ArrayOperations.displayMinMax(numbers);
+     assertEquals(expectedMinMax[0], actualMinMax[0]);
+     assertEquals(expectedMinMax[1], actualMinMax[1]);
+ }
 //Test when the search key is not found in the array
     @Test
 public void testSearchArray_KeyNotFound() {
