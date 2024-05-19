@@ -1,5 +1,9 @@
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Arrays;
 
 import org.junit.*;
 
@@ -78,6 +82,9 @@ public void testSearchArray_EmptyArray() {
 
     Assert.assertArrayEquals(expectedIndices, actualIndices);
 }
+
+
+
     // Tests for the ArrayOperations.reverseArray() starts here
     // test for empty arrays
     @Test
@@ -121,6 +128,20 @@ public void testSearchArray_EmptyArray() {
         int[] expected = { 4, 1, 2, 4, 2 };
         Assert.assertArrayEquals(expected, ArrayOperations.reverseArray(arr));
     }
+     
+    //test using assert method
+    @Test
+    public void testGetReverse(){
+    int[] array1 = {8, 1, 12, 9, 5};
+    int[] array2 = {5, 9, 12, 1, 8, 6, 4};
+    int[] array3 = {5, 9, 12, 1, 8};
+    assertTrue(Arrays.equals(ArrayOperations.reverseArray(array1),array3));
+    assertFalse(Arrays.equals(ArrayOperations.reverseArray(array1),array2));
+    }
+
+
+
+
 
     // Tests for the ArrayOperations.sumOfPrimes() starts here
     @Test
