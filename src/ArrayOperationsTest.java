@@ -135,8 +135,12 @@ public void testSearchArray_EmptyArray() {
     int[] array1 = {8, 1, 12, 9, 5};
     int[] array2 = {5, 9, 12, 1, 8, 6, 4};
     int[] array3 = {5, 9, 12, 1, 8};
+    int[] array4 = {5, 9, 12, 1, 8};
+int[] array5 = {6, 3, 12, 1, 8};
     assertTrue(Arrays.equals(ArrayOperations.reverseArray(array1),array3));
     assertFalse(Arrays.equals(ArrayOperations.reverseArray(array1),array2));
+    assertFalse(Arrays.equals(ArrayOperations.reverseArray(array5),array4));
+
     }
 
 
